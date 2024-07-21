@@ -1,0 +1,11 @@
+// src/main/resources/rules/rulesSet.drl
+package rules;
+
+import com.example.age_restricted.Entity;
+
+dialect  "mvel"
+
+rule "IS_UNDER_AGE"
+    when $entity: Entity( underAge )
+    then $entity.setMessage("Access denied!");
+end;
